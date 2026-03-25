@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice AI Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Голосовая нейросеть</h1>
+    <p class="subtitle">Скажи запрос голосом, получи ответ текстом и озвучкой.</p>
+
+    <section class="card">
+      <label for="apiKey">OpenAI API key (хранится только в браузере)</label>
+      <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+
+      <label for="systemPrompt">Роль ассистента</label>
+      <textarea id="systemPrompt" rows="2">Ты полезный голосовой ассистент. Отвечай кратко и по делу.</textarea>
+
+      <div class="row">
+        <button id="startBtn">🎙️ Начать запись</button>
+        <button id="stopBtn" disabled>⏹️ Стоп</button>
+        <button id="speakBtn" disabled>🔊 Озвучить ответ</button>
+      </div>
+
+      <p class="status" id="status">Статус: ожидание</p>
+
+      <label for="transcript">Распознанная речь</label>
+      <textarea id="transcript" rows="4" placeholder="Здесь появится распознанная речь..."></textarea>
+
+      <label for="response">Ответ нейросети</label>
+      <textarea id="response" rows="6" placeholder="Здесь появится ответ..."></textarea>
+
+      <button id="sendBtn">Отправить в нейросеть</button>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
